@@ -5,7 +5,7 @@ spring:
   application:
     name: config-server
   profiles:
-    active: git,native
+    active: git
   cloud:
     config:
       server:
@@ -13,8 +13,17 @@ spring:
           uri: https://github.com/MuyleangIng/config-server.git
           default-label: main
           clone-on-start: true
-        native:
-          search-locations: classpath:/config
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh,refresh
 
 eureka:
   client:
