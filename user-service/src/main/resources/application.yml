@@ -3,7 +3,7 @@ spring:
   application:
     name: user-service
   profiles:
-    active: dev  # Default active profile
+    active: dev
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://config-server:8888}
   jpa:
@@ -18,7 +18,7 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
 
-# Development profile configuration
+#TODO Development profile configuration
 ---
 spring:
   config:
@@ -41,7 +41,7 @@ user:
   test:
     property: ${USER_TEST_PROPERTY:dev-value}
 
-# Production profile configuration
+#TODO Production profile configuration
 ---
 spring:
   config:
